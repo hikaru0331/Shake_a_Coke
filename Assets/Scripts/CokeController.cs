@@ -5,10 +5,14 @@ using DG.Tweening;
 
 public class CokeController : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    public AudioClip shakeSound;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void MoveCoke()
@@ -19,6 +23,11 @@ public class CokeController : MonoBehaviour
         else
             transform.DOMoveY(-3.0f, 0.25f)
                 .SetEase(Ease.InOutBack);
+    }
+
+    public void PlayShakeSound()
+    {
+        audioSource.PlayOneShot(shakeSound);
     }
 
     // Update is called once per frame
