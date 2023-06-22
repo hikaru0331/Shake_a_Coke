@@ -21,9 +21,33 @@ public class SceneStateManager : MonoBehaviour
         }
     }
 
-    //終了画面に遷移させるメソッド
+    //タイトルから開始画面に遷移
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene("InGameStart");
+    }
+
+    //開始画面からインゲームに遷移
+    public static void LoadInGameScene()
+    {
+        SceneManager.LoadScene("InGame");
+    }
+
+    //インゲームから終了画面に遷移
     public static void LoadEndScene()
     {
         SceneManager.LoadScene("InGameEnd");
+    }
+
+    //終了画面からリザルトに遷移
+    public void LoadResultScene()
+    {
+        SceneManager.LoadScene("Result");
+    }
+
+    //リザルトからタイトルに遷移
+    public void LoadTitleScene()
+    {
+        SceneManager.LoadScene("Title");
     }
 }
