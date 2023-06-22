@@ -7,7 +7,7 @@ public class ClickCounter : MonoBehaviour
     public static int shakeCount;
 
     //コルーチン用に連続でクリックをカウントしないための変数
-    private bool isShake;
+    private bool isShaking;
 
     public GameObject coke;
     private CokeController cokeController;
@@ -20,22 +20,23 @@ public class ClickCounter : MonoBehaviour
 
     IEnumerator ShakeCounter()
     {
-        if(isShake)
+        if(isShaking)
             shakeCount++;
 
         yield return new WaitForSeconds(0.25f);
 
-        isShake = false;
+        isShaking = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isShake)
+        if (Input.GetMouseButtonDown(0) && !isShaking)
         {
-            isShake = true;
+            isShaking = true;
 
             cokeController.MoveCoke();
+            cokeController.PlayShakeSound();
 
             StartCoroutine("ShakeCounter");           
         }
