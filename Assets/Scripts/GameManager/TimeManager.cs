@@ -21,5 +21,10 @@ public class TimeManager : MonoBehaviour
         timeCounter -= Time.deltaTime;
 
         timeText.text = "c‚èŠÔ: " + timeCounter.ToString("f2");
+
+        if (timeCounter <= 0)
+        {
+            SceneStateManager.LoadEndScene();
+        }
     }
 }
