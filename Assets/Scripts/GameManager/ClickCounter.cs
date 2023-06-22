@@ -21,7 +21,6 @@ public class ClickCounter : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
-        Debug.Log("aaa");
         isShake = false;
     }
 
