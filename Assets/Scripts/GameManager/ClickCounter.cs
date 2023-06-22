@@ -10,12 +10,12 @@ public class ClickCounter : MonoBehaviour
     private bool isShake;
 
     public GameObject coke;
-    private MoveController moveController;
+    private CokeController cokeController;
 
     // Start is called before the first frame update
     void Start()
     {        
-        moveController = coke.GetComponent<MoveController>();
+        cokeController = coke.GetComponent<CokeController>();
     }
 
     IEnumerator ShakeCounter()
@@ -35,7 +35,7 @@ public class ClickCounter : MonoBehaviour
         {
             isShake = true;
 
-            moveController.MoveCoke();
+            cokeController.MoveCoke();
 
             StartCoroutine("ShakeCounter");           
         }
