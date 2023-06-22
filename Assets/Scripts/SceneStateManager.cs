@@ -48,6 +48,8 @@ public class SceneStateManager : MonoBehaviour
     //リザルトからタイトルに遷移
     public void LoadTitleScene()
     {
+        ClickCounter.shakeCount = 0;
+
         SceneManager.LoadScene("Title");
     }
 }
