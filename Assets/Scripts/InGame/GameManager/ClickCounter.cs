@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClickCounter : MonoBehaviour
 {
-    public static int shakeCount;
+    public static int shakeCount = 45;
 
     //コルーチン用に連続でクリックをカウントしないための変数
     private bool isShaking;
