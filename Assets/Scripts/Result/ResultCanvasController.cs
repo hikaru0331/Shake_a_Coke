@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class ResultCanvasController : MonoBehaviour
 {
+    public GameObject whiteCanvasImage;
     private Image image;
 
     // Start is called before the first frame update
@@ -14,12 +15,25 @@ public class ResultCanvasController : MonoBehaviour
         
     }
 
-    public void FadeCanvas()
+    public void FadeWhiteCanvas()
     {
-        image = GetComponent<Image>();
+        image = whiteCanvasImage.GetComponent<Image>();
 
-        gameObject.SetActive(true);
-        image.DOFade(0.0f, 2.0f);
+        whiteCanvasImage.SetActive(true);
+        image.DOFade(0.0f, 2.0f)
+            .OnComplete(ShowUI);
+    }
+
+    private void ShowUI()
+    {
+        if (ClickCounter.shakeCount >= 45)
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
 
     // Update is called once per frame

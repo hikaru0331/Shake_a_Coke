@@ -13,8 +13,8 @@ public class ResultCokeController : MonoBehaviour
     //効果音を制御するクラスを取得
     private ResultAudioController resultAudioController;
 
-    //白い背景を制御するクラスを取得
-    public GameObject whiteCanvasImage;
+    //キャンバスを制御するクラスを取得
+    public GameObject resultCanvasControllerObj;
     private ResultCanvasController resultCanvasController;
 
 
@@ -24,7 +24,7 @@ public class ResultCokeController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         resultAudioController = GetComponent<ResultAudioController>();
 
-        resultCanvasController = whiteCanvasImage.GetComponent<ResultCanvasController>();
+        resultCanvasController = resultCanvasControllerObj.GetComponent<ResultCanvasController>();
 
         transform.DOPunchPosition(new Vector3(0.1f, 0, 0), 3.0f, 40, 3)
             .OnComplete(OpenCoke);
@@ -32,7 +32,7 @@ public class ResultCokeController : MonoBehaviour
 
     private void OpenCoke()
     {
-        resultCanvasController.FadeCanvas();
+        resultCanvasController.FadeWhiteCanvas();
 
         if (ClickCounter.shakeCount >= 45)
         {
