@@ -31,7 +31,11 @@ public class ClickCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isShaking)
+        if (isShaking)
+            return;
+
+        if (Input.GetMouseButtonDown(0) 
+            || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
             isShaking = true;
 
