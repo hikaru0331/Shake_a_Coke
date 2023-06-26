@@ -36,7 +36,7 @@ public class ResultCanvasController : MonoBehaviour
 
     private void ShowUI()
     {
-        if (ClickCounter.shakeCount >= 45)
+        if (ClickCounter.shakeCount >= 85)
         {
             clearCanvas.SetActive(true);
 
