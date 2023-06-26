@@ -23,7 +23,7 @@ public class ClickCounter : MonoBehaviour
         if(isShaking)
             shakeCount++;
 
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.1f);
 
         isShaking = false;
     }

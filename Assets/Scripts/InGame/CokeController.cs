@@ -18,10 +18,10 @@ public class CokeController : MonoBehaviour
     public void MoveCoke()
     {
         if (transform.position.y <= 0)
-            transform.DOMoveY(3.0f, 0.25f)
+            transform.DOMoveY(3.0f, 0.1f)
                 .SetEase(Ease.InOutBack);
         else
-            transform.DOMoveY(-3.0f, 0.25f)
+            transform.DOMoveY(-3.0f, 0.1f)
                 .SetEase(Ease.InOutBack);
     }
 

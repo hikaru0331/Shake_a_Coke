@@ -34,7 +34,7 @@ public class ResultCokeController : MonoBehaviour
     {
         resultCanvasController.FadeWhiteCanvas();
 
-        if (ClickCounter.shakeCount >= 45)
+        if (ClickCounter.shakeCount >= 85)
         {
             resultAudioController.PlayExplosionSound();
             spriteRenderer.sprite = explosion;
